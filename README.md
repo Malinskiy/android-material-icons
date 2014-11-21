@@ -46,16 +46,19 @@ menu.findItem(R.id.share).setIcon(
 
 **My personal Nexus** (Maven Central is coming)
 
-```xml
-<dependency>
-    <groupId>com.malinskiy.materialicons</groupId>
-    <artifactId>library</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-or Gradle:
+Gradle:
 ```groovy
-compile 'com.malinskiy.materialicons:library:1.0.0'
+repositories {
+    ...
+    maven { url "https://nexus.malinskiy.com/content/groups/public/" }
+    ...
+}
+...
+dependencies {
+    ...
+    compile 'com.malinskiy.materialicons:library:1.0.0'
+    ...
+}
 ```
 
 ## License
