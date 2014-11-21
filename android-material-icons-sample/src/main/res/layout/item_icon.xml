@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    xmlns:tools="http://schemas.android.com/tools"
+                                    android:id="@+id/card_view"
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:clickable="true"
+                                    app:cardCornerRadius="4dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:orientation="vertical">
+
+        <com.malinskiy.materialicons.widget.IconTextView
+                android:id="@id/item_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="96dp"
+                android:transitionName="@string/transition_icon"
+                android:layout_gravity="center_horizontal"
+                tools:text="O"/>
+
+        <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/item_text"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="4dp"
+                android:textSize="14dp"
+                android:maxLines="2"
+                android:textColor="@color/primary_material_dark"
+                android:background="@color/background_material_light"
+                android:gravity="center_horizontal"
+                app:typeface="roboto_slab_light"
+                tools:text="Sample icon"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
