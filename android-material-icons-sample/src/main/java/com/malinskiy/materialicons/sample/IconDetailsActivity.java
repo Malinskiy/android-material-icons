@@ -1,8 +1,9 @@
 package com.malinskiy.materialicons.sample;
 
 import android.support.v7.app.ActionBarActivity;
-import com.malinskiy.materialicons.widget.IconTextView;
+import android.widget.ImageView;
 import com.devspark.robototextview.widget.RobotoTextView;
+import com.malinskiy.materialicons.IconDrawable;
 import com.malinskiy.materialicons.Iconify;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -17,14 +18,14 @@ public class IconDetailsActivity extends ActionBarActivity {
     public int position;
 
     @ViewById(R.id.item_icon)
-    public IconTextView   textView;
+    public ImageView      iconView;
     @ViewById(R.id.item_text)
     public RobotoTextView nameView;
 
     @AfterViews
     public void setup() {
         Iconify.IconValue iconValue = Iconify.IconValue.values()[position];
-        textView.setText(iconValue.formattedName());
+        iconView.setImageDrawable(new IconDrawable(this, iconValue).sizeRes(R.dimen.icon_detailed_size).colorRes(R.color.primary_dark_material_light));
         nameView.setText(iconValue.name());
     }
 }

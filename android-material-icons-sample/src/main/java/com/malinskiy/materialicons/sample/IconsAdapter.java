@@ -4,19 +4,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.malinskiy.materialicons.widget.IconTextView;
+import android.widget.ImageView;
 import com.devspark.robototextview.widget.RobotoTextView;
+import com.malinskiy.materialicons.IconDrawable;
 import com.malinskiy.materialicons.Iconify;
 
 public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public IconTextView   textView;
+        public ImageView      iconView;
         public RobotoTextView nameView;
 
-        public ViewHolder(View itemView, IconTextView textView, RobotoTextView nameView) {
+        public ViewHolder(View itemView, ImageView iconView, RobotoTextView nameView) {
             super(itemView);
-            this.textView = textView;
+            this.iconView = iconView;
             this.nameView = nameView;
         }
     }
@@ -27,7 +28,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     @Override
     public IconsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_icon, parent, false);
-        IconTextView textView = (IconTextView) view.findViewById(R.id.item_icon);
+        ImageView textView = (ImageView) view.findViewById(R.id.item_icon);
         RobotoTextView nameView = (RobotoTextView) view.findViewById(R.id.item_text);
         ViewHolder viewHolder = new ViewHolder(view, textView, nameView);
         return viewHolder;
@@ -36,7 +37,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Iconify.IconValue iconValue = Iconify.IconValue.values()[position];
-        holder.textView.setText(iconValue.formattedName());
+        holder.iconView.setImageDrawable(new IconDrawable(holder.iconView.getContext(), iconValue).sizeRes(R.dimen.icon_size).colorRes(R.color.primary_dark_material_light));
         holder.nameView.setText(iconValue.name());
     }
 

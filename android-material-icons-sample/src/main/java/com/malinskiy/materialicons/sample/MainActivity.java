@@ -51,6 +51,8 @@ public class MainActivity extends ActionBarActivity implements RecyclerView.OnIt
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
             View view = recyclerView.findChildViewUnder(e.getX(), e.getY());
+            if(view == null) return false;
+
             int position = recyclerView.getChildPosition(view);
 
             MainActivity activity = MainActivity.this;

@@ -44,19 +44,17 @@ menu.findItem(R.id.share).setIcon(
 
 ## Get it
 
-**My personal Nexus** (Maven Central is coming)
-
 Gradle:
 ```groovy
 repositories {
     ...
-    maven { url "https://nexus.malinskiy.com/content/groups/public/" }
+    mavenCentral()
     ...
 }
 ...
 dependencies {
     ...
-    compile 'com.malinskiy.materialicons:library:1.0.0'
+    compile 'com.malinskiy:materialicons:1.0.0'
     ...
 }
 ```
