@@ -1,3 +1,5 @@
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.malinskiy/materialicons/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.malinskiy/materialicons) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--material--icons-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1173)
+
 > **[All available icons (744)](http://zavoloklom.github.io/material-design-iconic-font/icons.html)**
 
 **If, like me, you're tired of copying 5 images (ldpi, mdpi, hdpi, xhdpi, xxhdpi) for each icon you want to use in your app, for each color you want to use them with ```android-material-icons``` can help you.**
