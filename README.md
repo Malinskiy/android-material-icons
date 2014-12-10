@@ -42,6 +42,19 @@ menu.findItem(R.id.share).setIcon(
    .actionBarSize());
 ```
 
+### Design-time preview (```maybe working```)
+1. Copy material font file (do not rename it) to your ```$ANDROID_SDK/platforms/android-$N/data/fonts/``` folder for each platform ```$N``` available.
+2. Assign attribute ```hacky_preview``` like this:
+```xml
+<com.malinskiy.materialicons.widget.IconTextView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="{md-account-circle}"
+            android:textSize="48dp"
+            app:hacky_preview="true"/>
+```
+
 -----
 
 ## Get it
@@ -56,7 +69,7 @@ repositories {
 ...
 dependencies {
     ...
-    compile 'com.malinskiy:materialicons:1.0.0'
+    compile 'com.malinskiy:materialicons:1.0.1'
     ...
 }
 ```
