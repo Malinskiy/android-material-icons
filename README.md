@@ -43,7 +43,7 @@ menu.findItem(R.id.share).setIcon(
 ```
 
 ### Design-time preview (```maybe working```)
-1. Copy material font file (do not rename it) to your ```$ANDROID_SDK/platforms/android-$N/data/fonts/``` folder for each platform ```$N``` available.
+1. Copy material font [file](https://github.com/Malinskiy/android-material-icons/blob/master/android-material-icons/src/main/resources/material-design-iconic-font-1.0.1.ttf) (do not rename it) to your ```$ANDROID_SDK/platforms/android-$N/data/fonts/``` folder for each platform ```$N``` available.
 2. Assign attribute ```hacky_preview``` like this:
 ```xml
 <com.malinskiy.materialicons.widget.IconTextView
