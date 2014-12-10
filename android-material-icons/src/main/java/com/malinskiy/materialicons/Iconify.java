@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.text.Spanned;
 import android.widget.TextView;
 
+import java.io.File;
 import java.io.IOException;
 
 import static android.text.Html.fromHtml;
@@ -29,6 +30,13 @@ public final class Iconify {
     public static final void addIcons(TextView... textViews) {
         for (TextView textView : textViews) {
             textView.setTypeface(getTypeface(textView.getContext()));
+            textView.setText(compute(textView.getText()));
+        }
+    }
+
+    public static void addIconsEditMode(TextView... textViews) {
+        for (TextView textView : textViews) {
+            textView.setTypeface(getTypefaceEditMode());
             textView.setText(compute(textView.getText()));
         }
     }
@@ -59,6 +67,14 @@ public final class Iconify {
             } catch (IOException e) {
                 return null;
             }
+        }
+        return typeface;
+    }
+
+    private static Typeface getTypefaceEditMode() {
+        if (typeface == null) {
+            File file = new File("/system/fonts/" + TTF_FILE);
+            typeface = Typeface.createFromFile(file);
         }
         return typeface;
     }

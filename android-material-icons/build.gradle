@@ -6,7 +6,6 @@ android {
     buildToolsVersion "21.1.1"
 
     defaultConfig {
-        applicationId "com.malinskiy.materialicons"
         minSdkVersion 4
         targetSdkVersion 21
         versionCode 1
@@ -27,5 +26,4 @@ dependencies {
     androidTestCompile 'org.robolectric:robolectric:2.3'
 }
 
-//apply from: 'https://raw.githubusercontent.com/jpardogo/gradle-mvn-push/master/gradle-mvn-push.gradle'
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

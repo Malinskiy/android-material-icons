@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="hacky_preview" format="boolean"/>
+
+    <declare-styleable name="IconTextView">
+        <attr name="hacky_preview"/>
+    </declare-styleable>
+
+    <declare-styleable name="IconButton">
+        <attr name="hacky_preview"/>
+    </declare-styleable>
+</resources>

@@ -43,7 +43,7 @@ dependencies {
 
 apt {
     arguments {
-        androidManifestFile variant.processResources.manifestFile
+        androidManifestFile variant.outputs[0].processResources.manifestFile
         resourcePackageName 'com.malinskiy.materialicons.sample'
     }
 }
