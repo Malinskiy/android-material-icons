@@ -13,7 +13,7 @@ import static com.malinskiy.materialicons.Iconify.IconValue;
 class Utils {
 
     public static final String ICON_FONT_FOLDER = "icon_tmp";
-    public static final String NAME_PREFIX      = "{md";
+    public static final String NAME_PREFIX      = "{zmdi";
 
     private Utils() {
         // Prevents instantiation

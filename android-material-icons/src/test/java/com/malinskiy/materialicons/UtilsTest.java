@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-import static com.malinskiy.materialicons.Iconify.IconValue.*;
+import static com.malinskiy.materialicons.Iconify.IconValue.zmdi_account_add;
 import static org.junit.Assert.assertEquals;
 
 @Config(manifest = Config.NONE)
@@ -14,7 +14,7 @@ public class UtilsTest {
 
     @Test
     public void test_replaceIcons() {
-        test("A{md_add}A", "A" + md_add.character + "A");
+        test("A{zmdi-account-add}A", "A" + zmdi_account_add.character + "A");
     }
 
     @Test
@@ -24,12 +24,12 @@ public class UtilsTest {
 
     @Test
     public void test_replaceIcons_manyIcons() {
-        test("A{md_add}A{md_adb}A", "A" + md_add.character + "A" + md_adb.character + "A");
+        test("A{zmdi-account-add}A{zmdi-account-add}A", "A" + zmdi_account_add.character + "A" + zmdi_account_add.character + "A");
     }
 
     @Test
     public void test_replaceIcons_withDash() {
-        test("A{md-add}A{md-adb}A", "A" + md_add.character + "A" + md_adb.character + "A");
+        test("A{zmdi-account-add}A{zmdi-account-add}A", "A" + zmdi_account_add.character + "A" + zmdi_account_add.character + "A");
     }
 
     @Test

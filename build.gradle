@@ -1,20 +1,19 @@
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
         mavenLocal()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4+'
-        classpath 'org.robolectric:robolectric-gradle-plugin:0.14.+'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4+'
+        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+        classpath 'org.robolectric:robolectric-gradle-plugin:1.1.0'
     }
 }
 
 allprojects {
     repositories {
-        mavenCentral()
+        jcenter()
         mavenLocal()
     }
 }

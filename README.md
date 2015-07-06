@@ -8,7 +8,7 @@
 
 ### About
 
-**android-material-icons** allows you to include any of the **[Material Design 1.0.1 icons by Google packed by Sergey Kupletsky](http://zavoloklom.github.io/material-design-iconic-font/)** in your texts, your ```ActionBar```, and even in your ```EditText```s. Icons are infinitely **scalable**, and **customizable** with shadows and everything you can do on texts.
+**android-material-icons** allows you to include any of the **[Material Design 2.1.1 icons by Google packed by Sergey Kupletsky](http://zavoloklom.github.io/material-design-iconic-font/)** in your texts, your ```ActionBar```, and even in your ```EditText```s. Icons are infinitely **scalable**, and **customizable** with shadows and everything you can do on texts.
 
 Special thanks to **Joan Zapata** for his [android-iconify](https://github.com/JoanZapata/android-iconify) project since this is mostly a copy :)
 
@@ -43,7 +43,7 @@ menu.findItem(R.id.share).setIcon(
 ```
 
 ### Design-time preview (```maybe working```)
-1. Copy material font [file](https://github.com/Malinskiy/android-material-icons/blob/master/android-material-icons/src/main/resources/material-design-iconic-font-1.0.1.ttf) (do not rename it) to your ```$ANDROID_SDK/platforms/android-$N/data/fonts/``` folder for each platform ```$N``` available.
+1. Copy material font [file](https://github.com/Malinskiy/android-material-icons/blob/master/android-material-icons/src/main/resources/material-design-iconic-font-2.1.1.ttf) (do not rename it) to your ```$ANDROID_SDK/platforms/android-$N/data/fonts/``` folder for each platform ```$N``` available.
 2. Assign attribute ```hacky_preview``` like this:
 ```xml
 <com.malinskiy.materialicons.widget.IconTextView
@@ -69,7 +69,7 @@ repositories {
 ...
 dependencies {
     ...
-    compile 'com.malinskiy:materialicons:1.0.1'
+    compile 'com.malinskiy:materialicons:1.0.2'
     ...
 }
 ```

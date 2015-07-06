@@ -3,7 +3,7 @@ package com.malinskiy.materialicons.sample;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.GestureDetectorCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
@@ -14,7 +14,7 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.activity_main)
-public class MainActivity extends ActionBarActivity implements RecyclerView.OnItemTouchListener {
+public class MainActivity extends AppCompatActivity implements RecyclerView.OnItemTouchListener {
 
     @ViewById(R.id.recycler_icons)
     protected RecyclerView               recyclerView;
@@ -46,6 +46,10 @@ public class MainActivity extends ActionBarActivity implements RecyclerView.OnIt
     public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
     }
 
+    @Override
+    public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+    }
+
     private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
 
         @Override
@@ -53,7 +57,7 @@ public class MainActivity extends ActionBarActivity implements RecyclerView.OnIt
             View view = recyclerView.findChildViewUnder(e.getX(), e.getY());
             if(view == null) return false;
 
-            int position = recyclerView.getChildPosition(view);
+            int position = recyclerView.getChildLayoutPosition(view);
 
             MainActivity activity = MainActivity.this;
 
