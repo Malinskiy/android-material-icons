@@ -18,7 +18,7 @@ If you need icons on a ```TextView```, use the ```{ }``` syntax. You can put any
 
 ```xml
 <IconTextView
-    android:text="{md-android}"
+    android:text="{zmdi-android}"
     android:shadowColor="#22000000"
     android:shadowDx="3"
     android:shadowDy="3"
@@ -37,7 +37,7 @@ If you need an icon in an ```ImageView``` or in your ```ActionBar```, then you s
 ```java
 // Set an icon in the ActionBar
 menu.findItem(R.id.share).setIcon(
-   new IconDrawable(this, IconValue.fa_share)
+   new IconDrawable(this, IconValue.zmdi_share)
    .colorRes(R.color.ab_icon)
    .actionBarSize());
 ```
@@ -50,7 +50,7 @@ menu.findItem(R.id.share).setIcon(
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="{md-account-circle}"
+            android:text="{zmdi-android}"
             android:textSize="48dp"
             app:hacky_preview="true"/>
 ```
