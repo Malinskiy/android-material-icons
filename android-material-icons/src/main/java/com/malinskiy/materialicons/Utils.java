@@ -4,16 +4,22 @@ import android.R;
 import android.content.Context;
 import android.util.Log;
 
-import java.io.*;
+import java.io.BufferedOutputStream;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 import static android.util.TypedValue.applyDimension;
 import static com.malinskiy.materialicons.Iconify.IconValue;
+import static com.malinskiy.materialicons.Iconify.TAG;
 
 class Utils {
 
     public static final String ICON_FONT_FOLDER = "icon_tmp";
-    public static final String NAME_PREFIX      = "{zmdi";
+    public static final String NAME_PREFIX = "{zmdi";
 
     private Utils() {
         // Prevents instantiation
@@ -49,6 +55,11 @@ class Utils {
         InputStream inputStream = null;
         try {
             inputStream = Iconify.class.getClassLoader().getResourceAsStream(resourceName);
+            if (inputStream == null) {
+                Log.e(TAG, "Font loading failed, getResourceAsStream returned null");
+                return null;
+            }
+
             byte[] buffer = new byte[inputStream.available()];
             bos = new BufferedOutputStream(new FileOutputStream(outPath));
             int l = 0;
