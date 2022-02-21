@@ -28,7 +28,7 @@ If you need icons on a ```TextView```, use the ```{ }``` syntax. You can put any
     ... />
 ```
 
-> You can either use ```IconTextView``` / ```ButtonTextView``` or use any ```TextView``` and then programmatically call ```Iconify.addIcons(myTextView);```.
+> You can either use ```IconTextView``` / ```IconButton``` or use any ```TextView``` and then programmatically call ```Iconify.addIcons(myTextView);```.
 
 ### Get started #2
 
@@ -69,7 +69,7 @@ repositories {
 ...
 dependencies {
     ...
-    compile 'com.malinskiy:materialicons:1.0.2'
+    implementation 'com.malinskiy:materialicons:1.0.2'
     ...
 }
 ```
