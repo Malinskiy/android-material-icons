@@ -8,7 +8,7 @@
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_icons"
             android:scrollbars="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"/>
 

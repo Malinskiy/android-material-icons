@@ -180,7 +180,7 @@ public class IconDrawable extends Drawable {
 
     @Override
     public int getOpacity() {
-        return this.alpha;
+        return PixelFormat.TRANSLUCENT;
     }
 
     /**
