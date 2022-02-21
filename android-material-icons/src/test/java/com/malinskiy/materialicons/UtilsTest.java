@@ -1,15 +1,10 @@
 package com.malinskiy.materialicons;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 
 import static com.malinskiy.materialicons.Iconify.IconValue.zmdi_account_add;
 import static org.junit.Assert.assertEquals;
 
-@Config(manifest = Config.NONE)
-@RunWith(RobolectricTestRunner.class)
 public class UtilsTest {
 
     @Test

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                                     xmlns:app="http://schemas.android.com/apk/res-auto"
                                     xmlns:tools="http://schemas.android.com/tools"
                                     android:id="@+id/card_view"
@@ -26,19 +26,18 @@
                 android:scaleType="fitCenter"
                 tools:src="@drawable/abc_btn_check_material"/>
 
-        <com.devspark.robototextview.widget.RobotoTextView
+        <TextView
                 android:id="@+id/item_text"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:padding="4dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:maxLines="2"
                 android:textColor="@color/primary_material_dark"
                 android:background="@color/background_material_light"
                 android:gravity="center_horizontal"
-                app:typeface="roboto_slab_light"
                 tools:text="Sample icon"/>
 
     </LinearLayout>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

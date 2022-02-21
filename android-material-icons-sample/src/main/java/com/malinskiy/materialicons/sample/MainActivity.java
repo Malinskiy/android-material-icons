@@ -1,28 +1,32 @@
 package com.malinskiy.materialicons.sample;
 
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.view.GestureDetectorCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.GestureDetectorCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-@EActivity(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity implements RecyclerView.OnItemTouchListener {
+    protected RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private GestureDetectorCompat gestureDetector;
 
-    @ViewById(R.id.recycler_icons)
-    protected RecyclerView               recyclerView;
-    private   RecyclerView.Adapter       adapter;
-    private   RecyclerView.LayoutManager layoutManager;
-    private   GestureDetectorCompat      gestureDetector;
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-    @AfterViews
+        recyclerView = findViewById(R.id.recycler_icons);
+        setupViews();
+    }
+
     public void setupViews() {
         recyclerView.setHasFixedSize(true);
 
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnIt
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
             View view = recyclerView.findChildViewUnder(e.getX(), e.getY());
-            if(view == null) return false;
+            if (view == null) return false;
 
             int position = recyclerView.getChildLayoutPosition(view);
 
@@ -66,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnIt
 
             ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                     activity, iconElement, getResources().getString(R.string.transition_icon));
-            ActivityCompat.startActivity(activity, IconDetailsActivity_.intent(activity).position(position).get(),
-                                         options.toBundle());
+            ActivityCompat.startActivity(activity, IconDetailsActivity.intent(activity, position),
+                    options.toBundle());
 
             return true;
         }
