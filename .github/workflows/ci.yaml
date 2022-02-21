@@ -10,7 +10,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
-      - uses: malinskiy/action-android/install-sdk@release/0.1.1
       - name: build & test
         run: ./gradlew assemble test
       - name: archive test results
