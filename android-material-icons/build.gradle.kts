@@ -69,6 +69,17 @@ afterEvaluate {
                 }
             }
         }
+
+        repositories {
+            maven {
+                name = "OSSHR"
+                credentials {
+                    this.username = user
+                    this.password = password
+                }
+                url = uri(releaseDeployUrl)
+            }
+        }
     }
 
     val passphrase = System.getenv("GPG_PASSPHRASE")

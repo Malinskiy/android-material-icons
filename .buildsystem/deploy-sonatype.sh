@@ -21,5 +21,5 @@ if [ -z "$GIT_TAG_NAME" ]; then
 else
   echo "on a tag -> deploy release version $GIT_TAG_NAME"
   ./gradlew assemble
-  ./gradlew :android-material-icons:publishReleasePublicationToMavenLocal
+  ./gradlew :android-material-icons:publishReleasePublicationToOSSHRRepository
 fi
