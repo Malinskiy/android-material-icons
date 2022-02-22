@@ -39,7 +39,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.malinskiy"
                 artifactId = "materialicons"
-                version = "1.0.3"
+                version = System.getenv("GIT_TAG_NAME") ?: "1.0.3"
 
                 pom?.apply {
                     name.set("MaterialIcons")
