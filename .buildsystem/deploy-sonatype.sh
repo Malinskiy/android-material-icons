@@ -17,11 +17,9 @@ if [ -z "$GPG_PASSPHRASE" ]; then
 fi
 
 if [ -z "$GIT_TAG_NAME" ]; then
-  echo "not on a tag -> deploy snapshot version"
-  ./gradlew assemble -PreleaseMode=SNAPSHOT
-  ./gradlew publishDefaultPublicationToOSSHRRepository -PreleaseMode=SNAPSHOT
+  echo "not on a tag -> no deploy needed"
 else
   echo "on a tag -> deploy release version $GIT_TAG_NAME"
-  ./gradlew assemble -PreleaseMode=RELEASE
-  ./gradlew publishDefaultPublicationToOSSHRRepository -PreleaseMode=RELEASE
+  ./gradlew assemble
+  ./gradlew :android-material-icons:publishReleasePublicationToMavenLocal
 fi
