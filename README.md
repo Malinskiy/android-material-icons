@@ -1,6 +1,6 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.malinskiy/materialicons/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.malinskiy/materialicons) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--material--icons-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1173)
 
-> **[All available icons (744)](http://zavoloklom.github.io/material-design-iconic-font/icons.html)**
+> **[All available icons (777)](http://zavoloklom.github.io/material-design-iconic-font/icons.html)**
 
 **If, like me, you're tired of copying 5 images (ldpi, mdpi, hdpi, xhdpi, xxhdpi) for each icon you want to use in your app, for each color you want to use them with ```android-material-icons``` can help you.**
 
@@ -8,7 +8,7 @@
 
 ### About
 
-**android-material-icons** allows you to include any of the **[Material Design 2.1.1 icons by Google packed by Sergey Kupletsky](http://zavoloklom.github.io/material-design-iconic-font/)** in your texts, your ```ActionBar```, and even in your ```EditText```s. Icons are infinitely **scalable**, and **customizable** with shadows and everything you can do on texts.
+**android-material-icons** allows you to include any of the **[Material Design 2.2.0 icons by Google packed by Sergey Kupletsky](http://zavoloklom.github.io/material-design-iconic-font/)** in your texts, your ```ActionBar```, and even in your ```EditText```s. Icons are infinitely **scalable**, and **customizable** with shadows and everything you can do on texts.
 
 Special thanks to **Joan Zapata** for his [android-iconify](https://github.com/JoanZapata/android-iconify) project since this is mostly a copy :)
 
@@ -43,7 +43,7 @@ menu.findItem(R.id.share).setIcon(
 ```
 
 ### Design-time preview (```maybe working```)
-1. Copy material font [file](https://github.com/Malinskiy/android-material-icons/blob/master/android-material-icons/src/main/resources/material-design-iconic-font-2.1.1.ttf) (do not rename it) to your ```$ANDROID_SDK/platforms/android-$N/data/fonts/``` folder for each platform ```$N``` available.
+1. Copy material font [file](https://github.com/Malinskiy/android-material-icons/blob/master/android-material-icons/src/main/resources/material-design-iconic-font-2.2.0.ttf) (do not rename it) to your ```$ANDROID_SDK/platforms/android-$N/data/fonts/``` folder for each platform ```$N``` available.
 2. Assign attribute ```hacky_preview``` like this:
 ```xml
 <com.malinskiy.materialicons.widget.IconTextView
@@ -69,7 +69,7 @@ repositories {
 ...
 dependencies {
     ...
-    implementation 'com.malinskiy:materialicons:1.0.2'
+    implementation 'com.malinskiy:materialicons:1.0.3'
     ...
 }
 ```
@@ -78,7 +78,7 @@ dependencies {
 
 ```
 Copyright 2013 Joan Zapata
-Copyright 2014 Anton Malinskiy
+Copyright 2021 Anton Malinskiy
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
