@@ -1,29 +1,34 @@
 package com.malinskiy.materialicons.sample;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.widget.ImageView;
-import com.devspark.robototextview.widget.RobotoTextView;
+import android.widget.TextView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import com.malinskiy.materialicons.IconDrawable;
 import com.malinskiy.materialicons.Iconify;
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.Extra;
-import org.androidannotations.annotations.ViewById;
 
-@EActivity(R.layout.activity_icon_details)
-public class IconDetailsActivity extends ActionBarActivity {
+public class IconDetailsActivity extends AppCompatActivity {
     public static final String ARG_POSITION = "position";
 
-    @Extra(ARG_POSITION)
     public int position;
 
-    @ViewById(R.id.item_icon)
-    public ImageView      iconView;
-    @ViewById(R.id.item_text)
-    public RobotoTextView nameView;
+    public static Intent intent(MainActivity activity, int position) {
+        Intent intent = new Intent(activity, IconDetailsActivity.class);
+        intent.putExtra(ARG_POSITION, position);
+        return intent;
+    }
 
-    @AfterViews
-    public void setup() {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_icon_details);
+
+        ImageView iconView = findViewById(R.id.item_icon);
+        TextView nameView = findViewById(R.id.item_text);
+        
+        position = getIntent().getExtras().getInt(ARG_POSITION);
         Iconify.IconValue iconValue = Iconify.IconValue.values()[position];
         iconView.setImageDrawable(new IconDrawable(this, iconValue).sizeRes(R.dimen.icon_detailed_size).colorRes(R.color.primary_dark_material_light));
         nameView.setText(iconValue.name());

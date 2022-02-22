@@ -4,7 +4,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="com.malinskiy.materialicons.sample.IconsFragment">
+             tools:context="com.malinskiy.materialicons.sample.IconDetailsActivity">
 
     <ImageView
             android:id="@id/item_icon"
@@ -15,7 +15,7 @@
             android:layout_centerInParent="true"
             tools:src="@drawable/abc_btn_check_material"/>
 
-    <com.devspark.robototextview.widget.RobotoTextView
+    <TextView
             android:id="@+id/item_text"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -26,7 +26,6 @@
             android:background="@color/background_material_light"
             android:layout_below="@id/item_icon"
             android:gravity="center"
-            app:typeface="roboto_slab_light"
             tools:text="Sample icon"/>
 
 </RelativeLayout>

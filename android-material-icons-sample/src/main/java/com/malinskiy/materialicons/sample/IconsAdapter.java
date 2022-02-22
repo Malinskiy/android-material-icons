@@ -1,21 +1,22 @@
 package com.malinskiy.materialicons.sample;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import com.devspark.robototextview.widget.RobotoTextView;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import com.malinskiy.materialicons.IconDrawable;
 import com.malinskiy.materialicons.Iconify;
 
 public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView      iconView;
-        public RobotoTextView nameView;
+        public ImageView iconView;
+        public TextView nameView;
 
-        public ViewHolder(View itemView, ImageView iconView, RobotoTextView nameView) {
+        public ViewHolder(View itemView, ImageView iconView, TextView nameView) {
             super(itemView);
             this.iconView = iconView;
             this.nameView = nameView;
@@ -25,13 +26,13 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     public IconsAdapter() {
     }
 
+    @NonNull
     @Override
-    public IconsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_icon, parent, false);
-        ImageView textView = (ImageView) view.findViewById(R.id.item_icon);
-        RobotoTextView nameView = (RobotoTextView) view.findViewById(R.id.item_text);
-        ViewHolder viewHolder = new ViewHolder(view, textView, nameView);
-        return viewHolder;
+        ImageView textView = view.findViewById(R.id.item_icon);
+        TextView nameView = view.findViewById(R.id.item_text);
+        return new ViewHolder(view, textView, nameView);
     }
 
     @Override
