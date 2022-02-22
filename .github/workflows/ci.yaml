@@ -11,7 +11,7 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
       - name: build & test
-        run: ./gradlew assemble test
+        run: ./gradlew assemble :android-material-icons:check
       - name: archive test results
         if: failure()
         run: (cd android-material-icons/build/reports/tests; zip -r -X ../../../../test-result.zip .)
